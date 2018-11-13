@@ -1,0 +1,7 @@
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\bin\Debug\SweepstakesUserStories.exe.config
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\bin\Debug\SweepstakesUserStories.exe
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\bin\Debug\SweepstakesUserStories.pdb
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\obj\Debug\SweepstakesUserStories.csprojAssemblyReference.cache
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\obj\Debug\SweepstakesUserStories.csproj.CoreCompileInputs.cache
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\obj\Debug\SweepstakesUserStories.exe
+C:\Users\blorw\Dropbox\Git\Sweepstakes\SweepstakesUserStories\obj\Debug\SweepstakesUserStories.pdb
