@@ -18,8 +18,12 @@ namespace SweepstakesUserStories
 -	void PrintContestantInfo(Contestant contestant)
 */
 
+        //-https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2
+        Dictionary<int, Contestant> dictionary;
+
         public Sweepstakes()
         {
+            dictionary = new Dictionary<int, Contestant>();
 
         }
 
@@ -28,14 +32,16 @@ namespace SweepstakesUserStories
 
         }
 
-        //public string PickWinner()
-        //{
+        public void PickWinner()
+        {
 
-        //}
+        }
 
         public void PrintContestantInfo(Contestant contestant)
         {
 
         }
+
+
     }
 }

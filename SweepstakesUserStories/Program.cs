@@ -8,15 +8,14 @@ namespace SweepstakesUserStories
 {
     public class Program
     {
-        UserInterface userInterface = new UserInterface();
 
         public static void Main(string[] args)
         {
+            UserInterface userInterface = new UserInterface();
+            userInterface.MainMenu();
 
-            public void EnterSweepstakes()
-            {
-                
-            }
+            userInterface.EnterUserInformation();
+
         }
     }
 }

@@ -12,16 +12,14 @@ namespace SweepstakesUserStories
         public string firstName;
         public string lastName;
         public string emailAddress;
-        public int idNumber;
-
 
 
         public Contestant()
         {
 
-            firstName = UserInterface.FirstName();
-            lastName = UserInterface.LastName();
-            //idNumber = UserInterface.IdNumber();
+            firstName = UserInterface.GetContestantFirstName();
+            lastName = UserInterface.GetContestantLastName();
+            lastName = UserInterface.GetContestantEmailAddress();
         }
 
     }

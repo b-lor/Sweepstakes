@@ -7,26 +7,51 @@ using System.Threading.Tasks;
 namespace SweepstakesUserStories
 {
     public class UserInterface
+
     {
-        public static string FirstName()
+        public void MainMenu()
         {
-            Console.WriteLine("Please enter a first name: ");
-            string input = "";
-            input = Console.ReadLine();
-            return input;
+            SweepstakeMainMenu();
         }
-        public static string LastName()
+
+        public static string SweepstakeMainMenu()
         {
-            Console.WriteLine("Please enter a last name: ");
+            Console.WriteLine("Sweepstake Main Menu:\n");
+            Console.WriteLine("What would you like to do?\n");
             string input = "";
             input = Console.ReadLine();
             return input;
         }
 
-        public void IdNumber()
+        public void EnterUserInformation()
         {
-
+            GetContestantFirstName();
+            GetContestantLastName();
+            GetContestantEmailAddress();
         }
+        public static string GetContestantFirstName()
+        {
+            Console.WriteLine("Please enter a First name: ");
+            string input = "";
+            input = Console.ReadLine();
+            return input;
+        }
+        public static string GetContestantLastName()
+        {
+            Console.WriteLine("Please enter a Last name: ");
+            string input = "";
+            input = Console.ReadLine();
+            return input;
+        }
+        public static string GetContestantEmailAddress()
+        {
+            Console.WriteLine("Please enter an Email Address: ");
+            string input = "";
+            input = Console.ReadLine();
+            return input;
+        }
+
+
 
     }
 }
