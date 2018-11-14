@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesUserStories
 {
-    public class SweepstakesQueueManager : ISweepstakesManager
+    class SweepstakesQueueManager : ISweepstakesManager
     {
         //As a developer, I want to create a SweepstakesQueueManager class that uses the Queue data structure as an underlying structure.
         //-https://www.guru99.com/c-sharp-queue.html

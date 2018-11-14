@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesUserStories
 {
-    public class SweepstakesStackManager : ISweepstakesManager
+    class SweepstakesStackManager : ISweepstakesManager
     {
         //As a developer, I want to create a SweepstakesStackManager class that uses the Stack data structure as an underlying structure.
         //-https://www.guru99.com/c-sharp-stack.html

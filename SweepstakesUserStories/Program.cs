@@ -11,12 +11,10 @@ namespace SweepstakesUserStories
 
         public static void Main(string[] args)
         {
+            FactoryDesign factoryDesign = new FactoryDesign();
+            factoryDesign.UserSelectManager();
             UserInterface userInterface = new UserInterface();
-
             userInterface.MainMenu();
-
-            userInterface.EnterUserInformation();
-
         }
     }
 }
