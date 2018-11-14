@@ -38,6 +38,7 @@ namespace SweepstakesUserStories
             contestant.registrationNumber = RegistrationNumber;
             dictionary.Add(RegistrationNumber, contestant);
             RegistrationNumber++;
+
         }
 
         public void PrintContestantInfo()

@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace SweepstakesUserStories
 {
-    public class MarketingFirm
+    class MarketingFirm
     {
         //As a developer, I want to create a MarketingFirm class. 
 
         ISweepstakesManager iSweepstakesManager;
 
-
-        public MarketingFirm()
+        public MarketingFirm(ISweepstakesManager iSweepstakesManager)
         {
+            this.iSweepstakesManager = iSweepstakesManager;
+        }
+        public void InsertSweepstakes()
+        {
+            iSweepstakesManager.InsertSweepstakes(UserInterface.CreateNewSweepstake());
+        }
+        public Sweepstakes GetSweepstakes()
+        {
+            return iSweepstakesManager.GetSweepstakes();
 
         }
-
 
     }
 }

@@ -26,17 +26,20 @@ namespace SweepstakesUserStories
             Console.WriteLine("Welcome -- Insert Business Name Here -- Marketing Firm.\n");
         }
 
-        public static string CreateNewSweepstake()
+        public static Sweepstakes CreateNewSweepstake()
         {
             Console.WriteLine("Creating a new Sweepstake............");
             Console.WriteLine("What is the name of your Sweepstake?");
             string input = "";
             input = Console.ReadLine();
-            Console.WriteLine($"Your {input} has been created.");
+            Console.WriteLine($"Your {input} sweepstake has been created.");
             Console.ReadKey();
+            string newSweepstake = input;
+            Sweepstakes newSweepstakes = new Sweepstakes();
             AddAnotherSweepstake();
-            return input;
+            return newSweepstakes;
         }
+
 
         public static string AddAnotherSweepstake()
         {
@@ -101,7 +104,7 @@ namespace SweepstakesUserStories
 
         public static string GetContestantFirstName()
         {
-            Console.WriteLine("Please enter a First name  whyyyyyyy: ");
+            Console.WriteLine("Please enter a First name: ");
             string firstName = Console.ReadLine();
             return firstName;
         }
