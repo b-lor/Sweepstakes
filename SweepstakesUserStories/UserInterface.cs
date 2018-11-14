@@ -9,32 +9,58 @@ namespace SweepstakesUserStories
     public class UserInterface
 
     {
+        Sweepstakes sweepstakes = new Sweepstakes();
+
         public void MainMenu()
         {
-            StartProgram();
+            StartProgramIntro();
             CreateNewSweepstake();
 
             SweepstakeMainMenu();
-            EnterUserInformation();
+
         }
 
-        public static string StartProgram()
+        public void StartProgramIntro()
         {
+            Console.Clear();
             Console.WriteLine("Welcome -- Insert Business Name Here -- Marketing Firm.\n");
-            string input = "";
-            input = Console.ReadLine();
-            return input;
         }
-       
+
         public static string CreateNewSweepstake()
         {
             Console.WriteLine("Creating a new Sweepstake............");
             Console.WriteLine("What is the name of your Sweepstake?");
             string input = "";
             input = Console.ReadLine();
+            Console.WriteLine($"Your {input} has been created.");
+            Console.ReadKey();
+            AddAnotherSweepstake();
             return input;
         }
-        public static int SweepstakeMainMenu()
+
+        public static string AddAnotherSweepstake()
+        {
+            Console.Clear();
+            Console.WriteLine("Would you like to add another Sweepstake\n");
+            Console.WriteLine("Enter 'Y' for Yes");
+            Console.WriteLine("Enter 'N' for No");
+            string input = "";
+            input = Console.ReadLine();
+
+            if (input[0] == 'y' || input[0] == 'Y')
+            {
+                CreateNewSweepstake();
+            }
+            if (input[0] == 'n' || input[0] == 'N')
+            {
+                UserInterface userInterface = new UserInterface();
+                userInterface.SweepstakeMainMenu();
+            }
+            Console.WriteLine("That is not a valid option, try again.");
+            AddAnotherSweepstake();
+            return input;
+        }
+        public void SweepstakeMainMenu()
         {
             Console.Clear();
             Console.WriteLine("Sweepstake Main Menu:\n");
@@ -43,29 +69,27 @@ namespace SweepstakesUserStories
             Console.WriteLine("Enter '3' - Select a winner for the Sweepstake.");
             int input = 0;
             input = Convert.ToInt32(Console.ReadLine());
-            return input;
-        }
-        public void OptionSelected()
-        {
             while (true)
             {
-                switch (SweepstakeMainMenu())
+                switch (input)
                 {
                     case 1:
                         EnterUserInformation();
                         break;
                     case 2:
-                        DisplayContestant();
+                        sweepstakes.PrintContestantInfo();
                         break;
                     case 3:
-                        SelectWinner();
+                        sweepstakes.PickWinner();
                         break;
                     default:
-                        return;
+                        break;
                 }
-
+                SweepstakeMainMenu();
             }
+
         }
+
         public void EnterUserInformation()
         {
             GetContestantFirstName();
@@ -74,26 +98,24 @@ namespace SweepstakesUserStories
             GetContestantRegistrationNumber();
             EnterAnotherContestant();
         }
+
         public static string GetContestantFirstName()
         {
-            Console.WriteLine("Please enter a First name: ");
-            string input = "";
-            input = Console.ReadLine();
-            return input;
+            Console.WriteLine("Please enter a First name  whyyyyyyy: ");
+            string firstName = Console.ReadLine();
+            return firstName;
         }
         public static string GetContestantLastName()
         {
             Console.WriteLine("Please enter a Last name: ");
-            string input = "";
-            input = Console.ReadLine();
-            return input;
+            string lastName = Console.ReadLine();
+            return lastName;
         }
         public static string GetContestantEmailAddress()
         {
-            Console.WriteLine("Please enter an Email Address: ");
-            string input = "";
-            input = Console.ReadLine();
-            return input;
+            Console.WriteLine("Please enter an Email address: ");
+            string emailAddress = Console.ReadLine();
+            return emailAddress;
         }
         public static int GetContestantRegistrationNumber()
         {
@@ -101,7 +123,7 @@ namespace SweepstakesUserStories
             return input;
         }
 
-        public static string EnterAnotherContestant()
+        public void EnterAnotherContestant()
         {
             Console.Clear();
             Console.WriteLine("Would you like to add another contestant\n");
@@ -109,15 +131,17 @@ namespace SweepstakesUserStories
             Console.WriteLine("Enter 'N' for No");
             string input = "";
             input = Console.ReadLine();
-            return input;
-        }
-        public void DisplayContestant()
-        {
 
-        }
-
-        public void SelectWinner()
-        {
+            if (input[0] == 'y' || input[0] == 'Y')
+            {
+                EnterUserInformation();
+            }
+            if (input[0] == 'n' || input[0] == 'N')
+            {
+                SweepstakeMainMenu();
+            }
+            Console.WriteLine("That is not a valid option, try again.");
+            EnterAnotherContestant();
 
         }
 
