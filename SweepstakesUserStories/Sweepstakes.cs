@@ -21,43 +21,49 @@ namespace SweepstakesUserStories
 
         //-https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2
         Dictionary<int, Contestant> dictionary;
-        public int RegistrationNumber { get; set; }
         string SweepstakesName;
+        private int RegistrationNumber;
+   
 
         public Sweepstakes()
         {
             dictionary = new Dictionary<int, Contestant>();
-            RegistrationNumber = 0;
         }
         public Sweepstakes(string sweepstakesName)
         {
             SweepstakesName = sweepstakesName;
         }
+
         public void RegisterContestant(Contestant contestant)
         {
-            contestant.registrationNumber = RegistrationNumber;
+
             dictionary.Add(RegistrationNumber, contestant);
             RegistrationNumber++;
+            Console.WriteLine("Contestant added! \n");
 
         }
 
-        public void PrintContestantInfo()
+        public void PrintContestantInfo(Contestant contestant)
         {
-            foreach (KeyValuePair<int, Contestant> contestant in dictionary)
+            foreach (KeyValuePair<int, Contestant> participants in dictionary)
             {
-                Console.WriteLine($"Registration #: {contestant.Value.registrationNumber} Name: {contestant.Value.firstName} {contestant.Value.lastName}");
+                Console.WriteLine("Contestant ID: " + " " + participants.Value.registrationNumber + "\n" + participants.Value.firstName + " " + participants.Value.lastName + "\n" + "Email: " + " " + participants.Value.emailAddress);
             }
-            Console.WriteLine("Test" + dictionary.Values + dictionary.Count);
+            Console.ReadKey();
         }
 
         // placeholder select random winner
-        public void PickWinner()
+        public string PickWinner()
         {
             Random random = new Random();
-            int randomWinner = random.Next(0, dictionary.Count);
-
-            var contestant = dictionary.ElementAt(randomWinner);
-            string winner = "The Winner of " + SweepstakesName + " is " + contestant.Key + ", with ticket: " + contestant.Value;
+            int randomPick = random.Next(0, dictionary.Count);
+            foreach (KeyValuePair<int, Contestant> participants in dictionary)
+            {
+                if (randomPick == participants.Key)
+                    Console.WriteLine("Winner of the sweepstake is : " + " " + participants.Value.firstName + " " + participants.Value.lastName);
+            }
+            Console.ReadKey();
+            return "done";
 
         }
 

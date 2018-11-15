@@ -24,5 +24,8 @@ namespace SweepstakesUserStories
 
             queueSweepstakes.Enqueue(sweepstakes);
         }
+        public void InsertSweepstakes()
+        {
+        }
     }
 }
